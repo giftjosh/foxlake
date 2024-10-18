@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FoxLake</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="./font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <script src="https://kit.fontawesome.com/d51c4a356f.js" crossorigin="anonymous"></script>
+    <link rel="icon" type="image/x-icon" href="/images/icon.png">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial;
+            /* font-size: 17px; */
+        }
+
+        #myVideo {
+            position: relative;
+            right: 0;
+            bottom: 0;
+            min-width: 100%;
+            min-height: 100%;
+
+        }
+
+        .content {
+            position: fixed;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            color: #f1f1f1;
+            width: 100%;
+            padding: 20px;
+        }
+
+        #playBtn {
+            width: 200px;
+            font-size: 18px;
+            padding: 10px;
+            border: none;
+            background: #000;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        #playBtn:hover {
+            background: #ddd;
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="row">
+                <img src="./images/FoxlakeBanner.png" alt="logo">
+                <nav>
+                    <div class="navbar">
+
+                        <ul>
+                            <li><a class="link" href="index.html">Home</a></li>
+                            <li><a class="link" href="activities.html">Activities</a></li>
+                            <li> <a class="link" href="booking.html">Book Here</a></li>
+                            <li><a class="link" href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <video autoplay muted loop id="myVideo">
+        <source src="./images/videofoxlake.mp4" type="video/mp4">
+        Your browser does not support HTML5 video.
+    </video>
+
+    <div class="content">
+        <h1>FoxLake Welcomes You!</h1>
+        <p>Foxlake Adventures is Scotland’s first cable wakeboarding park along with the UK’s only ropes course
+            constructed
+            over water. We are located in the heart of East Lothian 25 miles east of Edinburgh, nestled in a beautiful
+            woodland on the edge of the John Muir Way.
+        </p>
+        <p>Whether you want to give wakeboarding a try, take on the challenge of FoxFall Rope Course, Zip from tree to
+            tree
+            above the forest floor on ZipTrail, explore our woodland trails on Off-Road Segways or just chill out on the
+            lake side with a coffee from the award winning Boardside café, Foxlake will have something for you.
+        </p>
+        <button id="playBtn" onclick="myFunction()">Pause</button>
+    </div>
+
+    <script>
+        var video = document.getElementById("myVideo");
+        var btn = document.getElementById("playBtn");
+
+        function myFunction() {
+            if (video.paused) {
+                video.play();
+                btn.innerHTML = "Pause";
+            } else {
+                video.pause();
+                btn.innerHTML = "Play";
+            }
+        }
+    </script>
+    <!-- <footer>
+        <div>
+            <i class="fa-brands fa-x-twitter"></i>
+            <i class="fa-brands fa-instagram"></i>
+            <i class="fa-brands fa-facebook"></i>
+            <i class="fa-brands fa-twitter"></i>
+            <p>Copyright © 2024 Lochquarry Outdoor Centre</p>
+        </div>
+    </footer> -->
+</body>
+
+</html>
